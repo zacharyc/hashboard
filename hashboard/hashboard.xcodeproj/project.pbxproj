@@ -16,6 +16,7 @@
 		A65DA1971BCB0F0700044C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65DA1951BCB0F0700044C4E /* LaunchScreen.storyboard */; };
 		A65DA1A21BCB0F0700044C4E /* hashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A65DA1A11BCB0F0700044C4E /* hashboardTests.m */; };
 		A65DA1AD1BCB0F0700044C4E /* hashboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A65DA1AC1BCB0F0700044C4E /* hashboardUITests.m */; };
+		A65DA1BE1BCB7BF100044C4E /* appSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = A65DA1BD1BCB7BF100044C4E /* appSettings.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		A65DA1A81BCB0F0700044C4E /* hashboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hashboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65DA1AC1BCB0F0700044C4E /* hashboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hashboardUITests.m; sourceTree = "<group>"; };
 		A65DA1AE1BCB0F0700044C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A65DA1BD1BCB7BF100044C4E /* appSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appSettings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				A65DA1951BCB0F0700044C4E /* LaunchScreen.storyboard */,
 				A65DA1981BCB0F0700044C4E /* Info.plist */,
 				A65DA1841BCB0F0700044C4E /* Supporting Files */,
+				A65DA1BD1BCB7BF100044C4E /* appSettings.plist */,
 			);
 			path = hashboard;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65DA1971BCB0F0700044C4E /* LaunchScreen.storyboard in Resources */,
+				A65DA1BE1BCB7BF100044C4E /* appSettings.plist in Resources */,
 				A65DA1941BCB0F0700044C4E /* Assets.xcassets in Resources */,
 				A65DA1921BCB0F0700044C4E /* Main.storyboard in Resources */,
 			);
