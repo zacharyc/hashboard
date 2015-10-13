@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
+- (void)addHashboard:(NSString *)tag;
 
 @end
 
