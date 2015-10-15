@@ -40,13 +40,19 @@
 
 - (void)insertNewObject:(id)sender {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hashtag" message:@"enter a hashtag" preferredStyle:UIAlertControllerStyleAlert];
+
+    __block UITextField *tagTextField = nil;
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        [self addHashboard:textField.text];
+        tagTextField = textField;
     }];
 
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self addHashboard:tagTextField.text];
+        NSLog(@"Here %@", tagTextField.text);
+    }];
     [alertController addAction:okAction];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController animated:YES completion:^{
+    }];
 
 //    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -78,7 +84,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = self.objects[indexPath.row];
+    NSString *object = self.objects[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
 }
@@ -101,6 +107,9 @@
 
 - (void)addHashboard:(NSString *)tag {
     NSLog(@"============================> here");
+    [self.objects addObject:tag];
+    [self.tableView reloadData];
+
 }
 
 @end
