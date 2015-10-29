@@ -17,7 +17,8 @@
 		A65DA1971BCB0F0700044C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65DA1951BCB0F0700044C4E /* LaunchScreen.storyboard */; };
 		A65DA1A21BCB0F0700044C4E /* hashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A65DA1A11BCB0F0700044C4E /* hashboardTests.m */; };
 		A65DA1AD1BCB0F0700044C4E /* hashboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A65DA1AC1BCB0F0700044C4E /* hashboardUITests.m */; };
-		A65DA1BE1BCB7BF100044C4E /* appSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = A65DA1BD1BCB7BF100044C4E /* appSettings.plist */; settings = {ASSET_TAGS = (); }; };
+		A65DA1BE1BCB7BF100044C4E /* appSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = A65DA1BD1BCB7BF100044C4E /* appSettings.plist */; };
+		A6CFF5481BE1DA4500ED3335 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFF5471BE1DA4500ED3335 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		A65DA1AC1BCB0F0700044C4E /* hashboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hashboardUITests.m; sourceTree = "<group>"; };
 		A65DA1AE1BCB0F0700044C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A65DA1BD1BCB7BF100044C4E /* appSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appSettings.plist; sourceTree = "<group>"; };
+		A6CFF5461BE1DA4500ED3335 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		A6CFF5471BE1DA4500ED3335 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		B31759D484055038B4EE965E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +133,7 @@
 		A65DA1831BCB0F0700044C4E /* hashboard */ = {
 			isa = PBXGroup;
 			children = (
+				A6CFF5431BE1D9A900ED3335 /* Model */,
 				A65DA1871BCB0F0700044C4E /* AppDelegate.h */,
 				A65DA1881BCB0F0700044C4E /* AppDelegate.m */,
 				A65DA18A1BCB0F0700044C4E /* MasterViewController.h */,
@@ -170,6 +174,15 @@
 				A65DA1AE1BCB0F0700044C4E /* Info.plist */,
 			);
 			path = hashboardUITests;
+			sourceTree = "<group>";
+		};
+		A6CFF5431BE1D9A900ED3335 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFF5461BE1DA4500ED3335 /* Post.h */,
+				A6CFF5471BE1DA4500ED3335 /* Post.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CFF5481BE1DA4500ED3335 /* Post.m in Sources */,
 				A65DA1891BCB0F0700044C4E /* AppDelegate.m in Sources */,
 				A65DA18C1BCB0F0700044C4E /* MasterViewController.m in Sources */,
 				A65DA1861BCB0F0700044C4E /* main.m in Sources */,

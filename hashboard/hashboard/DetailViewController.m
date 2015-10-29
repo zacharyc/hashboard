@@ -9,8 +9,11 @@
 #import "DetailViewController.h"
 #import "AFHTTPRequestOperation.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "Post.h"
 
 @interface DetailViewController ()
+
+@property (nonatomic, strong) NSArray *posts;
 
 @end
 
@@ -37,6 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.posts = @[];
     [self configureView];
 
     // make network request
@@ -44,7 +48,18 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/fieldnotes/media/recent?client_id=%@", [configuration objectForKey:@"instagramKey"]];
     [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        NSMutableArray *images = [[NSMutableArray alloc] init];
+
+        if ([responseObject objectForKey:@"data"]) {
+            NSArray *data = [responseObject objectForKey:@"data"];
+            for (NSDictionary *item in data) {
+                Post *post = [[Post alloc] initWithDictionary:item];
+                [images addObject:post];
+            }
+        }
+        NSLog(@"JSON: %@, %lu", images, (unsigned long)[images count]);
+        self.posts = [[NSArray alloc] initWithArray:images];
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -57,7 +72,7 @@
 
 #pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [self.posts count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -68,6 +83,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
+    cell.textLabel.text = @"haha";
     return cell;
 }
 
